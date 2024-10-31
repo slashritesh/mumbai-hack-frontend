@@ -7,6 +7,7 @@ const poppins = Poppins({
     subsets :["latin"]
 })
 
+
 export default function RootLayout({
     children,
   }: {
@@ -15,6 +16,7 @@ export default function RootLayout({
     return (
       <html className={cn(poppins.className)} lang="en">
         <body>
+          {/* Layout UI */}
           <main>{children}</main>
         </body>
       </html>

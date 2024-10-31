@@ -24,7 +24,7 @@ const page = () => {
               <TableHead>Emp Name</TableHead>
               <TableHead>Department</TableHead>
               <TableHead>Desigination</TableHead>
-              <TableHead className="">Amount</TableHead>
+              <TableHead className="">Status</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -45,18 +45,14 @@ const SingleRow = () => {
     <TableRow>
       <TableCell className="font-medium">EM001</TableCell>
       <TableCell>Yogesh Thorat</TableCell>
-      <TableCell>IT</TableCell>
+      <TableCell className="">Information Technology</TableCell>
       <TableCell>Software Engineer</TableCell>
-      <TableCell>Credit Card</TableCell>
       <TableCell>
         <p className="p-1 px-4 bg-yellow-400 w-fit rounded-full text-sm">Online</p>
       </TableCell>
-      <TableCell>
-        <p className="p-1 px-4 bg-green-400 w-fit rounded-full text-sm">verified</p>
-      </TableCell>
-      <TableCell className="">
+      {/* <TableCell className="">
         <Button size={"sm"} variant={"secondary"}>Send Email</Button>
-      </TableCell>
+      </TableCell> */}
 
     </TableRow>
   );

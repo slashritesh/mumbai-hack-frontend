@@ -1,7 +1,8 @@
 
 import "@/styles/globals.css";
-import AdminSidebar from "@/components/AdminSidebar";
+import AdminSidebar from "@/components/admin/AdminSidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
+import AdminNavbar from "@/components/admin/AdminNavbar";
 
 
 
@@ -13,9 +14,8 @@ export default function RootLayout({
   return (
         <SidebarProvider>
           <AdminSidebar />
-          {/* <SidebarTrigger /> */}
           <div className="flex w-full flex-col">
-            <div className="border-b p-5">navbar</div>
+            <AdminNavbar />
             <main className="p-5 px-9">{children}</main>
           </div>
         </SidebarProvider>

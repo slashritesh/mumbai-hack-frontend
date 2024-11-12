@@ -6,6 +6,7 @@ import { authRoutes, protectedRoutes, publicRoutes } from "./lib/routes";
 export async function middleware(req: NextRequest) {
     const path = req.nextUrl.pathname;
     const user = await auth.getSessionUser();
+    
 
     const isPublicRoute = publicRoutes.includes(path)
     const isProtectedRoute = protectedRoutes.includes(path)
@@ -16,7 +17,7 @@ export async function middleware(req: NextRequest) {
     }
 
 
-    if (isProtectedRoute) {
+    if (isProtectedRoute || path.startsWith('/admin')) {
         if (!user) {
             return NextResponse.redirect(new URL("/login", req.nextUrl));
         }
@@ -34,6 +35,8 @@ export async function middleware(req: NextRequest) {
 
     return NextResponse.next();
 }
+
+
 
 export const config = {
     matcher: [

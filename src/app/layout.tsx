@@ -16,7 +16,6 @@ export default function RootLayout({
     return (
       <html className={cn(poppins.className)} lang="en">
         <body>
-          {/* Layout UI */}
           <main>{children}</main>
         </body>
       </html>

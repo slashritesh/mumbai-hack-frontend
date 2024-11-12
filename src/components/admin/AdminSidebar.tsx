@@ -21,8 +21,8 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "./ui/sidebar";
-import { getOrganization } from "@/data/user";
+} from "../ui/sidebar";
+
 
 type SingleSideBtnProps = {
   data: {
@@ -40,11 +40,8 @@ const companyNav = [
 ];
 
 const AdminSidebar = async () => {
-  const data = await getOrganization()
 
-  if (!data) {
-    return <h1>Data Access Deined</h1>
-  }
+
   
   return (
     <Sidebar>
@@ -64,7 +61,7 @@ const AdminSidebar = async () => {
           <SidebarGroupLabel className="text-sm">Company</SidebarGroupLabel>
           <SidebarGroupContent className="p-3 flex gap-3 text-sm rounded-lg font-medium bg-blue-100">
             <Building2 size={18} />
-            <h2>{data.org_name}</h2>
+            <h2>Slash Ritesh</h2>
           </SidebarGroupContent>
         </SidebarGroup>
         <SidebarGroup>

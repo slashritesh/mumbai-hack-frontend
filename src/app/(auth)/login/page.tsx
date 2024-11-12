@@ -15,6 +15,7 @@ const LoginPage = () => {
   const {handleSubmit,register,setError,formState:{errors,isLoading}} = useForm<z.infer<typeof loginschema>>({
     resolver : zodResolver(loginschema)
   })
+  
   const submit = async (values : z.infer<typeof loginschema>)=>{
     const {error,success} = await login(values)
 
@@ -38,10 +39,10 @@ const LoginPage = () => {
                 <Input {...register('password')} />
                 <span className='text-xs font-medium text-red-600'>{errors.password?.message}</span>
               </div>
-              {errors.root && <p className='p-2 bg-red-200 text-sm rounded-md font-medium text-red-600'>
+              {errors.root && <div className='p-2 bg-red-200 w-full text-sm rounded-md font-medium text-red-600'>
                 {errors.root?.message}
-              </p>}
-              <Button disabled={isLoading} type='submit' className='w-full mt-5'>Submit</Button>
+              </div>}
+              <Button disabled={isLoading} type='submit' className='w-full mt-2'>Submit</Button>
             </form>
         </AuthWarp>
     </section>

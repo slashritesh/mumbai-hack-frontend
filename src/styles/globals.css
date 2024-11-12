@@ -114,3 +114,26 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+/* For Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+  width: 6px;            /* Scrollbar width */
+  height: 6px;           /* Scrollbar height for horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Color of the scrollbar thumb */
+  border-radius: 100px;    /* Rounded edges for a smooth look */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Track is invisible for minimalism */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;       /* Firefox scrollbar width */
+  scrollbar-color: #ccc transparent; /* Thumb and track colors */
+}
+
